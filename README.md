@@ -1,6 +1,6 @@
-# Logarithmic Lines
+# JavaScript Logarithmic Line Chart
 
-![Logarithmic Lines](logLine.png)
+![JavaScript Logarithmic Line Chart](logLine.png)
 
 This demo application belongs to the set of examples for LightningChart JS, data visualization library for JavaScript.
 
