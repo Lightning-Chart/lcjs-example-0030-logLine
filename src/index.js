@@ -7,11 +7,9 @@ const lcjs = require('@arction/lcjs')
 // Extract required parts from LightningChartJS.
 const {
     lightningChart,
-    DataPatterns,
     ColorHEX,
     SolidLine,
     SolidFill,
-    UIOrigins,
     emptyLine,
     Themes
 } = lcjs
@@ -23,7 +21,7 @@ const {
 
 // Initialize chart.
 const chart = lightningChart().ChartXY({
-    // theme: Themes.dark
+    // theme: Themes.darkGold
     // Specify default Y Axis as logarithmic.
     defaultAxisY: {
         type: 'logarithmic',
@@ -54,12 +52,17 @@ const yAxisLinear = chart.addAxisY({
 
 // Add LegendBox.
 const legend = chart.addLegendBox()
+    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
+    .setAutoDispose({
+        type: 'max-width',
+        maxWidth: 0.30,
+    })
 
 // Graph 2 functions on both Axes.
 const xStep = 0.1
 const functions = [
-    { label: 'f(x) = x', xStart: xStep, xEnd: 10, Y: (x) => x, color: ColorHEX('#f00') },
-    { label: 'f(x) = 10^x', xStart: xStep, xEnd: 3.0, Y: (x) => 10 ** x, color: ColorHEX('#0f0') },
+    { label: 'f(x) = x', xStart: xStep, xEnd: 10, Y: (x) => x },
+    { label: 'f(x) = 10^x', xStart: xStep, xEnd: 3.0, Y: (x) => 10 ** x },
 ]
 
 // Generate function data in predefined X values range.
@@ -87,10 +90,7 @@ Promise.all(functions.map(info =>
                         .addRow('Y', '', y.toFixed(1))
                     )
                     .setName(info.label)
-                    .setStrokeStyle(new SolidLine({
-                        thickness: iAxis === 0 ? 5 : 5,
-                        fillStyle: new SolidFill({ color: iAxis === 0 ? info.color.setA(100) : info.color })
-                    }))
+                    .setStrokeStyle((style) => style.setThickness(5))
                     .add(dataSet)
 
                 console.log(series.getBoundaries())
