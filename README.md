@@ -43,7 +43,6 @@ const axis = chart.addAxisY({
 ## API Links
 
 * [XY cartesian chart]
-* [Data patterns]
 * [Color HEX factory]
 * [Solid Line style]
 * [Solid Fill style]
@@ -71,10 +70,9 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/ChartXY.html
-[Data patterns]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/
-[Color HEX factory]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/functions/ColorHEX.html
-[Solid Line style]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/SolidLine.html
-[Solid Fill style]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/classes/SolidFill.html
-[UI origins]: https://lightningchart.com/lightningchart-js-api-documentation/v4.0.0/variables/UIOrigins.html
+[XY cartesian chart]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/ChartXY.html
+[Color HEX factory]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/functions/ColorHEX.html
+[Solid Line style]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/SolidLine.html
+[Solid Fill style]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/classes/SolidFill.html
+[UI origins]: https://lightningchart.com/lightningchart-js-api-documentation/v4.1.0/variables/UIOrigins.html
 
