@@ -16,7 +16,7 @@ const { createProgressiveFunctionGenerator } = xydata
 // Initialize chart.
 const chart = lightningChart()
     .ChartXY({
-        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
+        theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined
         // Specify default Y Axis as logarithmic.
         defaultAxisY: {
             type: 'logarithmic',
