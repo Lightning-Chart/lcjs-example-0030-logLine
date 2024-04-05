@@ -14,7 +14,9 @@ const { lightningChart, ColorHEX, SolidLine, SolidFill, emptyLine, Themes } = lc
 const { createProgressiveFunctionGenerator } = xydata
 
 // Initialize chart.
-const chart = lightningChart()
+const chart = lightningChart({
+            resourcesBaseUrl: new URL(document.head.baseURI).origin + new URL(document.head.baseURI).pathname + 'resources/',
+        })
     .ChartXY({
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
         // Specify default Y Axis as logarithmic.
