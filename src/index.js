@@ -28,7 +28,7 @@ const chart = lightningChart({
     })
     .setTitle('Logarithmic Axis vs Linear Axis')
 
-const yAxisLogarithmic = chart.getDefaultAxisY().setTitle('Logarithmic Y Axis').setTitleMargin(10)
+const yAxisLogarithmic = chart.getDefaultAxisY().setTitle('Logarithmic Y Axis')
 
 // Add a second Y Axis that is linear.
 const yAxisLinear = chart
