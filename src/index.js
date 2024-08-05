@@ -2,10 +2,10 @@
  * LightningChart JS Example that showcases Logarithmic Axes feature.
  */
 // Import LightningChartJS
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 
 // Import xydata
-const xydata = require('@arction/xydata')
+const xydata = require('@lightningchart/xydata')
 
 // Extract required parts from LightningChartJS.
 const { lightningChart, ColorHEX, SolidLine, SolidFill, emptyLine, Themes } = lcjs
@@ -27,6 +27,7 @@ const chart = lightningChart({
         },
     })
     .setTitle('Logarithmic Axis vs Linear Axis')
+    .setCursorMode('show-nearest')
 
 const yAxisLogarithmic = chart.getDefaultAxisY().setTitle('Logarithmic Y Axis')
 
@@ -80,12 +81,6 @@ Promise.all(
                 .addLineSeries({
                     yAxis,
                 })
-                .setCursorResultTableFormatter((builder, _, x, y) =>
-                    builder
-                        .addRow(`${info.label} (${iAxis === 0 ? 'linear' : 'logarithmic'})`)
-                        .addRow('X', '', x.toFixed(1))
-                        .addRow('Y', '', y.toFixed(1)),
-                )
                 .setName(info.label)
                 .setStrokeStyle((style) => style.setThickness(5))
                 .add(dataSet)
