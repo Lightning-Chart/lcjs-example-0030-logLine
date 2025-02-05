@@ -70,9 +70,9 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/ChartXY.html
-[Color HEX factory]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/functions/ColorHEX.html
-[Solid Line style]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/SolidLine.html
-[Solid Fill style]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/SolidFill.html
-[UI origins]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/variables/UIOrigins.html
+[XY cartesian chart]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/classes/ChartXY.html
+[Color HEX factory]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/functions/ColorHEX.html
+[Solid Line style]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/classes/SolidLine.html
+[Solid Fill style]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/classes/SolidFill.html
+[UI origins]: https://lightningchart.com/js-charts/api-documentation/v7.0.1/variables/UIOrigins.html
 

@@ -8,7 +8,7 @@ const lcjs = require('@lightningchart/lcjs')
 const xydata = require('@lightningchart/xydata')
 
 // Extract required parts from LightningChartJS.
-const { lightningChart, ColorHEX, SolidLine, SolidFill, emptyLine, Themes } = lcjs
+const { lightningChart, ColorHEX, emptyFill, SolidFill, emptyLine, Themes } = lcjs
 
 // Import data-generator from 'xydata'-library.
 const { createProgressiveFunctionGenerator } = xydata
@@ -78,10 +78,12 @@ Promise.all(
         const legendEntries = []
         ;[yAxisLinear, yAxisLogarithmic].forEach((yAxis, iAxis) => {
             const series = chart
-                .addLineSeries({
+                .addPointLineAreaSeries({
                     yAxis,
+                    dataPattern: 'ProgressiveX',
                 })
                 .setName(info.label)
+                .setAreaFillStyle(emptyFill)
                 .setStrokeStyle((style) => style.setThickness(5))
                 .add(dataSet)
 
