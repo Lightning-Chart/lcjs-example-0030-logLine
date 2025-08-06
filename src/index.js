@@ -44,15 +44,6 @@ const yAxisLinear = chart
             .setMajorTickStyle((tickStyle) => tickStyle.setGridStrokeStyle(emptyLine)),
     )
 
-// Add LegendBox.
-const legend = chart
-    .addLegendBox()
-    // Dispose example UI elements automatically if they take too much space. This is to avoid bad UI on mobile / etc. devices.
-    .setAutoDispose({
-        type: 'max-width',
-        maxWidth: 0.3,
-    })
-
 // Graph 2 functions on both Axes.
 const xStep = 0.1
 const functions = [
@@ -75,31 +66,14 @@ Promise.all(
     // Create two series for each function, one on each Axis.
     dataSets.forEach((dataSet, iFunction) => {
         const info = functions[iFunction]
-        const legendEntries = []
         ;[yAxisLinear, yAxisLogarithmic].forEach((yAxis, iAxis) => {
             const series = chart
-                .addPointLineAreaSeries({
+                .addLineSeries({
                     yAxis,
-                    dataPattern: 'ProgressiveX',
                 })
                 .setName(info.label)
-                .setAreaFillStyle(emptyFill)
                 .setStrokeStyle((style) => style.setThickness(5))
-                .add(dataSet)
-
-            console.log(series.getBoundaries())
-
-            // Share LegendBoxEntry for both Series of the function.
-            if (iAxis === 0) {
-                legend.add(series)
-                legend.setEntries((entry, component) => {
-                    if (component === series) {
-                        legendEntries[iFunction] = entry
-                    }
-                })
-            } else {
-                series.attach(legendEntries[iFunction])
-            }
+                .appendJSON(dataSet)
         })
     })
 
